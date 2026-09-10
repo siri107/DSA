@@ -6,7 +6,7 @@
 public class Maximum_Subarray_53 {
      public int maxSubArray(int[] nums) {
         int maxsum=nums[0];
-        int sum=0;
+        int sum;
         for(int i=0;i<nums.length;i++)
         {
             sum=0;
