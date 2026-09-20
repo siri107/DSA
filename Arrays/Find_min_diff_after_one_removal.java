@@ -49,6 +49,7 @@ public class Find_min_diff_after_one_removal {
         
         int res=func(arr);
         int res1=func2(arr);
+        System.out.println(res);
         System.out.println(res1);
     }
 }
