@@ -77,15 +77,37 @@ public class move_zeroes {
     }
     //time complexity: O(n), where n is the length of the array. We traverse the array once to swap the non-zero elements with the zeros.
     //space complexity: O(1), as we are using a constant amount of extra space
+    public void moveZeroes3(int[] nums) {
+        int l=0;
+        int r=nums.length-1;
+        while(l<=r){
+            while(l< r &&(nums[l]!=0))
+                l++;
+            while(l<r && nums[r]==0 )
+                r--;
+            if(l<r){
+                int temp = nums[l];
+                nums[l]= nums[r];
+                nums[r] = temp;
+                l++;
+                r--;
+            }
+            
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            System.out.print(nums[i]);
+        }
+    }
     public static void main(String[] args) {
         move_zeroes solution = new move_zeroes();
-        int[] nums = {0, 1, 0, 3, 12};
-        solution.moveZeroes(nums); // Output: [1, 3, 12, 0, 0]
-        System.out.println();
         int[] nums1 = {0, 1, 0, 3, 12};
+        solution.moveZeroes(nums1); // Output: [1, 3, 12, 0, 0]
+        System.out.println();
         solution.moveZeroes1(nums1); // Output: [1, 3, 12, 0, 0]
         System.out.println();
-        int[] nums2 = {0, 1, 0, 3, 12};
-        solution.moveZeroes2(nums2); // Output: [1, 3, 12, 0, 0]
+        solution.moveZeroes2(nums1);
+        System.out.println(); // Output: [1, 3, 12, 0, 0]
+        solution.moveZeroes3(nums1);
     }
 }
